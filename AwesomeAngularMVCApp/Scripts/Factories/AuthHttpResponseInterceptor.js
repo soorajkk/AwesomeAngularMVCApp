@@ -15,7 +15,7 @@
         },
         responseError: function (rejection) {
            // debugger;
-            dtXHRTracerFactory.leaveHXR(response.config.url);
+            dtXHRTracerFactory.leaveHXR(rejection.config.url);
             if (rejection.status === 401) {
                 $injector.get('$state').go('loginRegister', { returnUrl: $location.path() });
             }

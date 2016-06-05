@@ -74,7 +74,13 @@ namespace AwesomeAngularMVCApp.Controllers
             //await SignInManager.SignInAsync(user, false, false);
             var result =await CountToAsync(Convert.ToInt32(model.ResqustIdentifier));
             log.Debug("After CountToAsync RequestID :::: " + model.ResqustIdentifier);
-            return Json(model);
+
+            Random waitTime = new Random()
+            double seconds = waitTime.Next(3 * 1000, 11 * 1000);
+            int jaba = waitTime.Next(3 * 1000, 11 * 1000);
+
+            //return Json(model);
+            throw new Exception("JABJABA");
         }
 
         //public async Task<string> RandomAsync()
@@ -86,17 +92,12 @@ namespace AwesomeAngularMVCApp.Controllers
         {            
             if (counerStat % 2 == 0)
             {
-                log.Debug("inside %2 ::::counerStat == " + counerStat);
-                Random waitTime = new Random();
-                double seconds = waitTime.Next(3 * 1000, 11 * 1000);
-                int jaba = waitTime.Next(3 * 1000, 11 * 1000);
-                // System.Threading.Thread.Sleep(jaba);
-                await Task.Delay(5000);
+                log.Debug("inside %2 ::::counerStat == " + counerStat);                            
+                await Task.Delay(1000* counerStat);
 
             //   ;
                 
-            }
-            ++counerStat;
+            }           
             return true;
         }
 
