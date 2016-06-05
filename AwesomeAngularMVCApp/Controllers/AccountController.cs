@@ -68,7 +68,7 @@ namespace AwesomeAngularMVCApp.Controllers
         public async Task<JsonResult> Register(RegisterViewModel model)
         {
             log.Debug("BEfore CountToAsync, RequestID :::: "+model.ResqustIdentifier);         
-            var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+           // var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
             //var result = await UserManager.CreateAsync(user, model.Password);
             //if (!result.Succeeded) return false;
             //await SignInManager.SignInAsync(user, false, false);

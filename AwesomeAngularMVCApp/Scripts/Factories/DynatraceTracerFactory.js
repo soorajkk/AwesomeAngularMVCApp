@@ -20,12 +20,12 @@ var dtXHRTracerFactory = (function () {
             } catch (e) { }
         },
         leaveHXR: function (url, reqID) {
-            console.log("incoming data as is::::::: URL : " + url + "REQ NO: " + reqID + "timestamp:::::" + Date.now())
+            console.log("incoming data as is::::::: URL : " + url + "REQ NO: " + reqID + "   timestamp:::::" + Date.now())
             //debugger;
             for (var i = 0; i < xhrHistList.length; i++) {
-                if (xhrHistList[i].url == url) {
+                if (xhrHistList[i].url == url && xhrHistList[i].ResqustId==reqID) {
                     try {
-                        console.log("leaveHXR URL : " + xhrHistList[i].url + "REQ NO: " + xhrHistList[i].ResqustId + "timestamp:::::" + Date.now())
+                        console.log("leaveHXR URL : " + xhrHistList[i].url + "REQ NO: " + xhrHistList[i].ResqustId + "   timestamp:::::" + Date.now())
                        // if (typeof window.dT_ != 'undefined') {
                             //dynaTrace.leaveXhrAction(xhrHistList[i].xhrAction);							        
                        // }
